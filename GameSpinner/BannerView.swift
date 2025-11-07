@@ -13,16 +13,19 @@ import GoogleMobileAds
 import os
 
 struct BannerAdView: UIViewRepresentable {
-        
-    // TODO: Make this configurable and change it to a real one before deployment
-    let adUnitID: String = "ca-app-pub-3940256099942544/2934735716"
-    
+    private let logger = Logger(subsystem: "com.sdsoftware.sourdoughbuddy", category: "BannerAdView")
+
     let width: CGFloat
     
     func makeUIView(context: Context) -> BannerView {
+        
         let adSize = currentOrientationAnchoredAdaptiveBanner(width: width)
         let banner = BannerView(adSize: adSize)
-        banner.adUnitID = adUnitID
+        if let adUnitID = Bundle.main.object(forInfoDictionaryKey: "GAD_UNIT_ID") as? String {
+            banner.adUnitID = adUnitID
+        } else {
+            logger.error("⚠️ Missing GAD_UNIT_ID in Info.plist")
+        }
         banner.delegate = context.coordinator
         banner.rootViewController = UIApplication.shared.firstKeyWindowRootViewcontroller()
         banner.load(Request())

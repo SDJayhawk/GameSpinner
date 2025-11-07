@@ -7,17 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA322D172EBEA0D000C5BA23 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AA322D162EBEA0D000C5BA23 /* GoogleMobileAds */; };
+		AA322D4B2EBEB81C00C5BA23 /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA322D492EBEB81C00C5BA23 /* release.xcconfig */; };
+		AA322D4C2EBEB81C00C5BA23 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA322D482EBEB81C00C5BA23 /* debug.xcconfig */; };
 		AA9BA4C62E5CEE69005F5EB4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA9BA4C52E5CEE69005F5EB4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA05EBA92E53CB8F00AC9A5B /* GameSpinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSpinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA322D482EBEB81C00C5BA23 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
+		AA322D492EBEB81C00C5BA23 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
 		AA9BA4C52E5CEE69005F5EB4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AA322D142EBEA05000C5BA23 /* Exceptions for "GameSpinner" folder in "GameSpinner" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AA05EBA82E53CB8F00AC9A5B /* GameSpinner */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AA05EBAB2E53CB8F00AC9A5B /* GameSpinner */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AA322D142EBEA05000C5BA23 /* Exceptions for "GameSpinner" folder in "GameSpinner" target */,
+			);
 			path = GameSpinner;
 			sourceTree = "<group>";
 		};
@@ -28,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA322D172EBEA0D000C5BA23 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +56,7 @@
 		AA05EBA02E53CB8F00AC9A5B = {
 			isa = PBXGroup;
 			children = (
+				AA322D4A2EBEB81C00C5BA23 /* config */,
 				AA05EBAB2E53CB8F00AC9A5B /* GameSpinner */,
 				AA05EBAA2E53CB8F00AC9A5B /* Products */,
 				AA9BA4C52E5CEE69005F5EB4 /* README.md */,
@@ -49,6 +69,15 @@
 				AA05EBA92E53CB8F00AC9A5B /* GameSpinner.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AA322D4A2EBEB81C00C5BA23 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				AA322D482EBEB81C00C5BA23 /* debug.xcconfig */,
+				AA322D492EBEB81C00C5BA23 /* release.xcconfig */,
+			);
+			path = config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,6 +101,7 @@
 			);
 			name = GameSpinner;
 			packageProductDependencies = (
+				AA322D162EBEA0D000C5BA23 /* GoogleMobileAds */,
 			);
 			productName = TwisterSpinner;
 			productReference = AA05EBA92E53CB8F00AC9A5B /* GameSpinner.app */;
@@ -101,6 +131,9 @@
 			);
 			mainGroup = AA05EBA02E53CB8F00AC9A5B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AA322D152EBEA0D000C5BA23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = AA05EBAA2E53CB8F00AC9A5B /* Products */;
 			projectDirPath = "";
@@ -116,6 +149,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA322D4B2EBEB81C00C5BA23 /* release.xcconfig in Resources */,
+				AA322D4C2EBEB81C00C5BA23 /* debug.xcconfig in Resources */,
 				AA9BA4C62E5CEE69005F5EB4 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +256,8 @@
 		};
 		AA05EBB42E53CB9100AC9A5B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AA05EBAB2E53CB8F00AC9A5B /* GameSpinner */;
+			baseConfigurationReferenceRelativePath = config/release.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -284,7 +321,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GameSpinner/GameSpinner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 57N7QWAN6Z;
 				ENABLE_APP_SANDBOX = YES;
@@ -292,6 +329,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameSpinner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Game Spinner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -308,7 +346,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.sdroses.TwisterSpinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -330,7 +368,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GameSpinner/GameSpinner.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 57N7QWAN6Z;
 				ENABLE_APP_SANDBOX = YES;
@@ -338,6 +376,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameSpinner/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Game Spinner";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -354,7 +393,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.5;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = net.sdroses.TwisterSpinner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -391,6 +430,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA322D152EBEA0D000C5BA23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA322D162EBEA0D000C5BA23 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA322D152EBEA0D000C5BA23 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AA05EBA12E53CB8F00AC9A5B /* Project object */;
 }

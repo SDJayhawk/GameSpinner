@@ -12,7 +12,7 @@ struct SpinnerBoardView: View {
     @Binding var spinController:SpinController
     var body: some View {
         VStack(alignment: .center) {
-            Spacer(minLength: 60)
+            Spacer(minLength: 50)
             GeometryReader { geo in
                 let side = min(geo.size.width, geo.size.height)
                 ZStack {
@@ -64,7 +64,7 @@ struct SpinnerBoardView: View {
             if spinController.spinning {
                 Text("Spinning ...")
                     .font(.title)
-                    .frame(height: 75)
+                    .frame(height: 80)
             } else {
                 if let spinResult = spinController.getResult() {
                     HStack {
@@ -75,21 +75,15 @@ struct SpinnerBoardView: View {
                         
                         Spacer()
                     }
+                    .frame(height: 80)
                 } else {
                     Text("No Result")
                         .font(.title)
+                        .frame(height: 75)
                 }
             }
-//            Button(spinController.spinning ? "Stop" : "Spin") {
-//                let stopTime = Double.random(in: 1..<2)
-//                if spinController.spinning {
-//                    spinController.stopSpin()
-//                } else {
-//                    spinController.startSpin(autoStopAfter: stopTime)
-//                }
-//            }
-//            .buttonStyle(.borderedProminent)
-            Spacer(minLength: 40)
+
+//            Spacer(minLength: 40)
         }
     }
 }
