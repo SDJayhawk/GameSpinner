@@ -8,15 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		AA322D172EBEA0D000C5BA23 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = AA322D162EBEA0D000C5BA23 /* GoogleMobileAds */; };
-		AA322D4B2EBEB81C00C5BA23 /* release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA322D492EBEB81C00C5BA23 /* release.xcconfig */; };
-		AA322D4C2EBEB81C00C5BA23 /* debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AA322D482EBEB81C00C5BA23 /* debug.xcconfig */; };
 		AA9BA4C62E5CEE69005F5EB4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA9BA4C52E5CEE69005F5EB4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA05EBA92E53CB8F00AC9A5B /* GameSpinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameSpinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA322D482EBEB81C00C5BA23 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		AA322D492EBEB81C00C5BA23 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = release.xcconfig; sourceTree = "<group>"; };
+		AA322D4D2EBEBC8A00C5BA23 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = debug.xcconfig; sourceTree = "<group>"; };
 		AA9BA4C52E5CEE69005F5EB4 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,8 +72,8 @@
 		AA322D4A2EBEB81C00C5BA23 /* config */ = {
 			isa = PBXGroup;
 			children = (
-				AA322D482EBEB81C00C5BA23 /* debug.xcconfig */,
 				AA322D492EBEB81C00C5BA23 /* release.xcconfig */,
+				AA322D4D2EBEBC8A00C5BA23 /* debug.xcconfig */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -115,7 +113,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					AA05EBA82E53CB8F00AC9A5B = {
 						CreatedOnToolsVersion = 16.4;
@@ -149,8 +147,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA322D4B2EBEB81C00C5BA23 /* release.xcconfig in Resources */,
-				AA322D4C2EBEB81C00C5BA23 /* debug.xcconfig in Resources */,
 				AA9BA4C62E5CEE69005F5EB4 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +186,7 @@
 /* Begin XCBuildConfiguration section */
 		AA05EBB32E53CB9100AC9A5B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA322D4D2EBEBC8A00C5BA23 /* debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -242,7 +239,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Twister Spinner Debug";
+				INFOPLIST_KEY_CFBundleDisplayName = "Game Spinner Debug";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -256,8 +253,7 @@
 		};
 		AA05EBB42E53CB9100AC9A5B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = AA05EBAB2E53CB8F00AC9A5B /* GameSpinner */;
-			baseConfigurationReferenceRelativePath = config/release.xcconfig;
+			baseConfigurationReference = AA322D492EBEB81C00C5BA23 /* release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -304,7 +300,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Twister Spinner";
+				INFOPLIST_KEY_CFBundleDisplayName = "Game Spinner";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
