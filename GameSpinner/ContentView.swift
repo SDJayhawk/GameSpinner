@@ -42,29 +42,15 @@ struct ContentView: View {
                             Label("About", systemImage: "info.circle")
                         }
                     }
-                    Spacer(minLength: 100)
+                    Spacer(minLength: 50)
                 }
 #if !targetEnvironment(macCatalyst)
-            bannerAd()
+            AdMobBannerView()
+                .frame(height: 50)
 #endif
         }
+        .ignoresSafeArea(edges: .bottom)
     }
-#if !targetEnvironment(macCatalyst)
-    func bannerAd() -> some View {
-        GeometryReader { geo in
-            BannerAdView(width: geo.size.width)
-                .frame(width: geo.size.width, height: 50, alignment: .center)
-                .ignoresSafeArea(edges: .bottom)
-                .onAppear() {
-                    availableWidth = geo.size.width
-                }
-                .onChange(of: geo.size.width) {
-                    availableWidth = $1
-                }
-        }
-        .frame(height: 50)
-    }
-#endif
 }
 
 #Preview {
