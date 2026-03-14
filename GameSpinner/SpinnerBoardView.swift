@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct SpinnerBoardView: View {
+    @Environment(ReviewController.self) private var reviewController
     @Binding var spinController:SpinController
+
     var body: some View {
         VStack(alignment: .center) {
             Spacer(minLength: 50)
@@ -56,6 +58,7 @@ struct SpinnerBoardView: View {
 //                        let _ = print("startTopOrBottom: \(startTopOrBottom), startLeftOrRight: \(startLeftOrRight), gAngle: \(gAngle.degrees + 180)")
                         
                         spinController.startSpin(autoStopAfter: spinDuration, direction: SpinDirection.make(direction))
+                        reviewController.triggerReviewPrompt = true
                     })
                 )
 

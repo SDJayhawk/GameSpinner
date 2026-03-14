@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
+    @Environment(\.requestReview) private var requestReview
 
     @State var spinController: SpinController
     @State private var availableWidth: CGFloat = 320
-
+    @State private var reviewController = ReviewController()
+    
     init() {
         self.spinController = SpinController()
     }
@@ -44,12 +47,17 @@ struct ContentView: View {
                     }
                     Spacer(minLength: 50)
                 }
+                .onChange(of: reviewController.triggerReviewPrompt) {
+                    reviewController.displayReviewPrompt( { spinController.history.getItems().count > 10} ) { requestReview()
+                    }
+                }
 #if !targetEnvironment(macCatalyst)
             AdMobBannerView()
                 .frame(height: 50)
 #endif
         }
         .ignoresSafeArea(edges: .bottom)
+        .environment(reviewController)
     }
 }
 
