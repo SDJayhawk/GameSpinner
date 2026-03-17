@@ -10,9 +10,9 @@ import SwiftUI
 import GoogleMobileAds
 import os
 
+fileprivate let logger = Logger(subsystem: "com.srosesoftware.gamespinner", category: "AdMobBannerView")
+
 struct AdMobBannerView: UIViewRepresentable {
-    
-    private let logger = Logger(subsystem: "com.sdsoftware.sourdoughbuddy", category: "AdMobBannerView")
 
     func makeCoordinator() -> Coordinator {
         Coordinator()
@@ -60,11 +60,11 @@ struct AdMobBannerView: UIViewRepresentable {
         }
 
         func bannerViewDidReceiveAd(_ bannerView: BannerView) {
-            print("✅ Banner loaded successfully.")
+            logger.info("✅ Banner loaded successfully.")
         }
 
         func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
-            print("❌ Failed to load banner ad: \(error.localizedDescription)")
+            logger.error("❌ Failed to load banner ad: \(error.localizedDescription)")
         }
     }
 }

@@ -14,7 +14,7 @@ struct SpinnerBoardView: View {
 
     var body: some View {
         VStack(alignment: .center) {
-            Spacer(minLength: 50)
+            Spacer(minLength: 100)
             GeometryReader { geo in
                 let side = min(geo.size.width, geo.size.height)
                 ZStack {
@@ -86,7 +86,7 @@ struct SpinnerBoardView: View {
                 }
             }
 
-//            Spacer(minLength: 40)
+            Spacer(minLength: 40)
         }
     }
 }

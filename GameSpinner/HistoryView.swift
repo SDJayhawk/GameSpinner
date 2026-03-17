@@ -12,6 +12,14 @@ struct HistoryView: View {
 
     var body: some View {
         VStack() {
+            HStack {
+                Spacer()
+                Button("Clear") {
+                    spinController.clearHistory()
+                }
+                .padding(.top)
+                .padding(.trailing)
+            }
             let _ = spinController.spinning
             ScrollView(.vertical) {
                 VStack(spacing: 10) {
@@ -21,13 +29,6 @@ struct HistoryView: View {
                 }
             }
             .padding()
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Clear") {
-                        spinController.clearHistory()
-                    }
-                }                
-            }
         }
     }
 }

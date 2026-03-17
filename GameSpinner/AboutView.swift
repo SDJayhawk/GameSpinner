@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AboutView: View {
-    
+        
     var body: some View {
                 
         VStack(alignment: .center) {
@@ -28,21 +28,17 @@ struct AboutView: View {
                 .padding(.bottom)
             Text("Feedback")
                 .font(.headline)
-            Text("Send comments, questions, and feature requests to : [https://srosesoftware.com/spinner/](https://srosesoftware.com/spinner/)")
+            Text("[Send comments, questions, and feature requests to](https://srosesoftware.com/spinner/)")
                 .padding(.bottom)
+            WriteReviewLink()
+
             Spacer()
         }
         .padding()
     }
     
     func getVersion() -> String {
-        
-//        print("InfoDictionary")
-//        Bundle.main.infoDictionary?.forEach { (key: String, value: Any) in
-//            print("\(key): \(value)")
-//        }
-        
-        
+
         return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown Version"
     }
 

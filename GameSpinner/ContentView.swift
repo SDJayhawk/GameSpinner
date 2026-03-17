@@ -20,43 +20,35 @@ struct ContentView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .bottom) {
-                VStack {
-                    TabView {
-                        NavigationStack {
-                            SpinnerBoardView(spinController: $spinController)
-                                .navigationTitle("Spinner")
-                        }
-                        .tabItem {
-                            Label("Spinner", systemImage:
-                                    "arrow.trianglehead.2.counterclockwise.rotate.90")
-                        }
-                        NavigationStack {
-                            HistoryView(spinController: $spinController)
-                                .navigationTitle("History")
-                        }
-                        .tabItem {
-                            Label("History", systemImage: "clock")
-                        }
-                        NavigationStack {
-                            AboutView()
-                        }
-                        .tabItem {
-                            Label("About", systemImage: "info.circle")
-                        }
-                    }
-                    Spacer(minLength: 50)
-                }
-                .onChange(of: reviewController.triggerReviewPrompt) {
-                    reviewController.displayReviewPrompt( { spinController.history.getItems().count > 10} ) { requestReview()
-                    }
-                }
+        VStack(spacing: 0) {
 #if !targetEnvironment(macCatalyst)
-            AdMobBannerView()
-                .frame(height: 50)
+        AdMobBannerView()
+            .frame(height: 50)
+            .background(Color(uiColor: .systemBackground))
 #endif
+            TabView {
+                SpinnerBoardView(spinController: $spinController)
+                .tabItem {
+                    Label("Spinner", systemImage: "arrow.trianglehead.2.counterclockwise.rotate.90")
+                }
+                HistoryView(spinController: $spinController)
+                .tabItem {
+                    Label("History", systemImage: "clock")
+                }
+                NavigationStack {
+                    AboutView()
+                }
+                .tabItem {
+                    Label("About", systemImage: "info.circle")
+                }
+            }
+
         }
-        .ignoresSafeArea(edges: .bottom)
+        .onChange(of: reviewController.triggerReviewPrompt) {
+            reviewController.displayReviewPrompt(
+                { spinController.history.getItems().count > 10 }
+            ) { requestReview() }
+        }
         .environment(reviewController)
     }
 }
